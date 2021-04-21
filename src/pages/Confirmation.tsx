@@ -11,9 +11,17 @@ import {
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'
 import { Button } from '../components/Button'
+import { useNavigation } from '@react-navigation/core'
 
 
 export const Confirmation: React.FC = () => {
+    
+    const navigation = useNavigation()
+
+    const handleMoveOn = () => {
+        navigation.navigate('PlantSelect')
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
@@ -31,7 +39,7 @@ export const Confirmation: React.FC = () => {
                 </Text>
 
                 <View style={styles.footer}>
-                    <Button title="Começar" />
+                    <Button onPress={handleMoveOn} title="Começar" />
                 </View>
             </View>
 
